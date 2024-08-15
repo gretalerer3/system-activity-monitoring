@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: Looker 
+    database: "{{ env_var('PRJ_ID', 'astrafy-sandbox-greta') }}"
+    description: "Landing zone database for Looker System Activity data"
+    schema: system_monitoring
+    tables: 
+      - name: looker_query_usage
+        identifier: looker_query_usage
+        description: "Looker query usage data"
+      - name: looker_events_usage
+        identifier: looker_events_usage
+        description: "Looker events usage data"
+      - name: looker_name_mapping
+        identifier: looker_name_mapping
+        description: "Looker name mapping data"
+    
+  - name: Looker Studio 
+    database: "{{ env_var('PRJ_ID', 'astrafy-sandbox-greta') }}"
+    description: "Landing zone database for Looker Studio Activity data in GA4"
+    schema: analytics_447559480
+    tables: 
+      - name: looker_studio_query_usage
+        identifier: events_*
+        description: "Looker Studio query usage data"
+
